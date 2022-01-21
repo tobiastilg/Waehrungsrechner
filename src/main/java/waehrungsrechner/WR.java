@@ -1,5 +1,7 @@
 package waehrungsrechner;
 
+import waehrungsrechner.builder.WRBuilder;
+
 /**
  * Schnittstelle auf die der Client zugreift
  */
@@ -38,5 +40,11 @@ public abstract class WR implements IUmrechnen {
         double umgerechneterBetrag = umrechnen(variante, betrag);
         umgerechneterBetrag = calculateTwoDecimals(umgerechneterBetrag);
         return umgerechneterBetrag;
+    }
+
+    //Builder
+    public static WRBuilder builder() {
+        WRBuilder builder = new WRBuilder();
+        return builder;
     }
 }
