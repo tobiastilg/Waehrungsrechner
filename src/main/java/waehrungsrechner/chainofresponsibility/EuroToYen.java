@@ -3,7 +3,7 @@ package waehrungsrechner.chainofresponsibility;
 import waehrungsrechner.WR;
 
 /**
- * Konkreter Bearbeiter
+ * Konkreter Bearbeiter (Kettenmitglied)
  */
 public class EuroToYen extends WR {
 

@@ -1,5 +1,8 @@
 package waehrungsrechner;
 
+/**
+ * Schnittstelle auf die der Client zugreift
+ */
 public abstract class WR implements IUmrechnen {
 
     //next Element in ChainOfResponsibility
@@ -9,6 +12,9 @@ public abstract class WR implements IUmrechnen {
         this.nextWR = nextWR;
     }
 
+    /**
+     * Weitergeben an nächstes Kettenglied
+     */
     public double umrechnen(String variante, double betrag) {
         if (nextWR != null) {
             return nextWR.umrechnen(variante, betrag);
@@ -19,7 +25,8 @@ public abstract class WR implements IUmrechnen {
     }
 
     private void printError() {
-        System.out.print("Keine Variante gefunden! Folgender Betrag konnte nicht umgerechnet werden: ");
+        System.out.println("Keine Variante gefunden!");
+        System.out.print("Folgender Betrag konnte nicht umgerechnet werden: ");
     }
 
     private double calculateTwoDecimals(double umgerechneterBetrag) {
@@ -27,7 +34,7 @@ public abstract class WR implements IUmrechnen {
     }
 
     //TemplateHook - Schablonenmethode
-    public final double berechnung(String variante, double betrag) {
+    public final double berechnen(String variante, double betrag) {
         double umgerechneterBetrag = umrechnen(variante, betrag);
         umgerechneterBetrag = calculateTwoDecimals(umgerechneterBetrag);
         return umgerechneterBetrag;
