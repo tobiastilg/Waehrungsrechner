@@ -10,14 +10,14 @@ public abstract class WR implements IUmrechnen {
     //next Element in ChainOfResponsibility
     private WR nextWR;
 
-    public WR(WR nextWR) {
-        this.nextWR = nextWR;
+    public WR(IUmrechnen nextWR) {
+        this.nextWR = (WR)nextWR;
     }
 
     /**
      * Weitergeben an nächstes Kettenglied
      */
-    public double umrechnen(String variante, double betrag) {
+    protected double umrechnen(String variante, double betrag) {
         if (nextWR != null) {
             return nextWR.umrechnen(variante, betrag);
         } else {

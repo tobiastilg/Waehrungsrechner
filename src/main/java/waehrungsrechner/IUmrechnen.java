@@ -1,5 +1,6 @@
 package waehrungsrechner;
 
 public interface IUmrechnen {
-    public double umrechnen(String variante, double betrag);
+    //double umrechnen(String variante, double betrag);
+    double berechnen(String variante, double betrag);
 }

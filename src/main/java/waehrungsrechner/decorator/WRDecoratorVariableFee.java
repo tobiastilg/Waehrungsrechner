@@ -1,5 +1,6 @@
 package waehrungsrechner.decorator;
 
+import waehrungsrechner.IUmrechnen;
 import waehrungsrechner.WR;
 
 /**
@@ -7,7 +8,7 @@ import waehrungsrechner.WR;
  */
 public class WRDecoratorVariableFee extends WRDecorator {
 
-    public WRDecoratorVariableFee(WR nextWR) {
+    public WRDecoratorVariableFee(IUmrechnen nextWR) {
         super(nextWR);
     }
 

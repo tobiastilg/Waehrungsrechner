@@ -1,5 +1,6 @@
 package waehrungsrechner.decorator;
 
+import waehrungsrechner.IUmrechnen;
 import waehrungsrechner.WR;
 
 /**

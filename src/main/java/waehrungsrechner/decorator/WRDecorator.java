@@ -1,5 +1,6 @@
 package waehrungsrechner.decorator;
 
+import waehrungsrechner.IUmrechnen;
 import waehrungsrechner.WR;
 
 /**
@@ -9,7 +10,7 @@ public abstract class WRDecorator extends WR {
 
     //kein eigener WR als Datenfeld nötig, da durch die Chain bereits einer definiert wird
 
-    public WRDecorator(WR nextWR) {
+    public WRDecorator(IUmrechnen nextWR) {
         super(nextWR);
     }
 
