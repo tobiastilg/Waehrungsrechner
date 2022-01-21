@@ -2,6 +2,9 @@ package waehrungsrechner.chainofresponsibility;
 
 import waehrungsrechner.WR;
 
+/**
+ * Konkreter Bearbeiter
+ */
 public class EuroToUsDollar extends WR {
 
     public EuroToUsDollar(WR nextWR) {
@@ -11,8 +14,7 @@ public class EuroToUsDollar extends WR {
     @Override
     public double umrechnen(String variante, double betrag) {
         if (variante.equalsIgnoreCase("eurotousdollar")) {
-            double umgerechneterBetrag = betrag/0.8827;
-            return Math.floor(umgerechneterBetrag * 100)/100;
+            return betrag/0.8827;
         } else {
             return super.umrechnen(variante, betrag);
         }
