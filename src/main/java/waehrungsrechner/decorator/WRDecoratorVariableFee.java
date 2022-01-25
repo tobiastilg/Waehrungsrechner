@@ -14,7 +14,7 @@ public class WRDecoratorVariableFee extends WRDecorator {
 
     @Override
     public double umrechnen(String variante, double betrag) {
-        double betragMitFee = betrag*1.05;
+        double betragMitFee = betrag*0.95;
         return super.umrechnen(variante, betragMitFee);
     }
 }
